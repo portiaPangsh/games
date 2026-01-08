@@ -471,7 +471,7 @@
     </div>
 
     <footer>
-        Made with ❤️ by <a href="https://shuhao-pang.com" target="_blank">Portia Pang</a>
+        Crafted by <a href="https://shuhao-pang.com" target="_blank">Shuhao Pang (Portia)</a> © 2026
     </footer>
 
     <script>
@@ -486,7 +486,7 @@
                 this.mode = 'number'; // 'number' or 'notes'
                 this.timerInterval = null;
                 this.seconds = 0;
-
+                
                 this.init();
             }
 
@@ -499,7 +499,7 @@
 
             generatePuzzle() {
                 this.fillGrid(this.solution);
-
+                
                 for (let i = 0; i < 9; i++) {
                     for (let j = 0; j < 9; j++) {
                         this.grid[i][j] = this.solution[i][j];
@@ -536,7 +536,7 @@
 
             fillGrid(grid) {
                 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
+                
                 for (let i = 0; i < 9; i++) {
                     for (let j = 0; j < 9; j++) {
                         if (grid[i][j] === 0) {
@@ -633,7 +633,7 @@
 
             handleNumberInput(num) {
                 if (!this.selectedCell) return;
-
+                
                 const { row, col } = this.selectedCell;
 
                 if (this.mode === 'number') {
@@ -658,7 +658,7 @@
             attachEventListeners() {
                 document.addEventListener('keydown', (e) => {
                     if (!this.selectedCell) return;
-
+                    
                     const num = parseInt(e.key);
                     if (num >= 1 && num <= 9) {
                         this.handleNumberInput(num);
@@ -721,7 +721,7 @@
                 cells.forEach(cell => {
                     const row = parseInt(cell.dataset.row);
                     const col = parseInt(cell.dataset.col);
-
+                    
                     if (this.grid[row][col] !== 0 && this.grid[row][col] !== this.solution[row][col]) {
                         cell.classList.add('error');
                         hasErrors = true;
@@ -785,7 +785,7 @@
                         this.stopTimer();
                         document.getElementById('finalTime').textContent = document.getElementById('timer').textContent;
                         document.getElementById('winMessage').style.display = 'flex';
-
+                        
                         document.querySelectorAll('.cell').forEach(cell => {
                             cell.classList.add('completed');
                         });
